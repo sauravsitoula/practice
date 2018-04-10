@@ -3,7 +3,6 @@ package com.texas.practice.filter;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.Filter;
@@ -15,7 +14,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class practiceFilter implements Filter {
+import org.springframework.stereotype.Component;
+@Component
+public class PracticeFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -26,8 +27,8 @@ public class practiceFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain filterChain)
 			throws IOException, ServletException {
-		HttpServletResponse response = (HttpServletResponse) req;
-		HttpServletRequest request = (HttpServletRequest) res;
+		HttpServletResponse response = (HttpServletResponse) res;
+		HttpServletRequest request = (HttpServletRequest) req;
 		Enumeration <String> headerNames = request.getHeaderNames();
 		Map<String, String> requestHeaders = new HashMap<String, String>();
 		while (headerNames.hasMoreElements()) {
