@@ -17,4 +17,11 @@ public class UserService {
 		user.setPassword(userdto.getPassword());
 		userRepository.save(user);
 	}
+	public void updateUser(Long id, userDto userDto) {
+		userModel usermodel = userRepository.getOne(id);
+		usermodel.setName(userDto.getName());
+		usermodel.setPassword(userDto.getPassword());
+		userRepository.save(usermodel);
+		
+	}
 }
