@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.texas.practice.dto.userDto;
+import com.texas.practice.dto.UserDto;
 import com.texas.practice.service.UserService;
 
 
@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Object> createUser(@RequestBody userDto userdto){
+	public ResponseEntity<Object> createUser(@RequestBody UserDto userdto){
 		userService.createUser(userdto);		
 		return new ResponseEntity<Object>(HttpStatus.CREATED);
 	}
