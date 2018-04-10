@@ -22,7 +22,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter{
 	public Docket api() {
 	return new Docket(DocumentationType.SWAGGER_2).select()
 			.apis(RequestHandlerSelectors
-					.basePackage("com.Javaboys.Forum.controller"))
+					.basePackage("com.texas.practice.controller"))
 			.paths(PathSelectors.any()).build();
 }
 @Override
