@@ -1,6 +1,6 @@
 package com.texas.practice.dto;
 
-public class userDto {
+public class UserDto {
 	private Long id;
 	private String name;
 	private String password;
