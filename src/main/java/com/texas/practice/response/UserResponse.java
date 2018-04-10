@@ -3,6 +3,7 @@ package com.texas.practice.response;
 public class UserResponse {
 	private String name;
 	private String password;
+	
 	public String getName() {
 		return name;
 	}

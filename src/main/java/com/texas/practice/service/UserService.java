@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.texas.practice.dto.userDto;
 import com.texas.practice.model.userModel;
 import com.texas.practice.repository.UserRepository;
+import com.texas.practice.response.UserResponse;
 @Service
 public class UserService {
 	@Autowired 
@@ -16,5 +17,14 @@ public class UserService {
 		user.setName(userdto.getName());
 		user.setPassword(userdto.getPassword());
 		userRepository.save(user);
+	}
+	public UserResponse getUser(Long id) {
+		userModel abcd = userRepository.getOne(id);
+	    
+		userModel user = userRepository.getOne(id);
+        UserResponse userResponse = new UserResponse();
+		userResponse.setName(user.getName());
+		userResponse.setPassword(user.getPassword());
+		return userResponse;
 	}
 }
