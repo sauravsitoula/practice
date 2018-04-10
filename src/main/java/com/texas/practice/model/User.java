@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name= "userTable")
-public class userModel implements Serializable{
+public class User implements Serializable{
 	@Column(name= "id" )
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
