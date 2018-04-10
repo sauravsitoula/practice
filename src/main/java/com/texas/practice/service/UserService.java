@@ -17,4 +17,8 @@ public class UserService {
 		user.setPassword(userdto.getPassword());
 		userRepository.save(user);
 	}
+	public void deleteUser(Long userId) {
+		userRepository.deleteById(userId);
+		
+	}
 }
