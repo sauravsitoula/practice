@@ -2,9 +2,9 @@ package com.texas.practice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.texas.practice.model.userModel;
+import com.texas.practice.model.User;
 
-public interface UserRepository extends JpaRepository<userModel,Long> {
+public interface UserRepository extends JpaRepository<User,Long> {
 
 
 }
