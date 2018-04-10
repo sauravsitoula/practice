@@ -19,6 +19,13 @@ public class UserService {
 		userRepository.save(user);
 	}
 
+	public void updateUser(Long id, UserDto userDto) {
+		User usermodel = userRepository.getOne(id);
+		usermodel.setName(userDto.getName());
+		usermodel.setPassword(userDto.getPassword());
+		userRepository.save(usermodel);
+	}
+
 	public UserResponse getUser(Long id) {
 		User abcd = userRepository.getOne(id);
 	    
@@ -30,6 +37,7 @@ public class UserService {
 	}
 	public void deleteUser(Long userId) {
 		userRepository.deleteById(userId);
+
 		
 	}
 	

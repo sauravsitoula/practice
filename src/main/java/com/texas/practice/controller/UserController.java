@@ -35,6 +35,14 @@ public ResponseEntity<Object> createUser(@RequestBody UserDto userdto){
 	return new ResponseEntity<Object>(HttpStatus.CREATED);
 }
 
+@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+public ResponseEntity<Object> updateUser(@PathVariable Long id, @RequestBody UserDto userDto){
+	userService.updateUser(id, userDto);
+	return new ResponseEntity<Object>(HttpStatus.OK);
+	}
+
+
+
 @RequestMapping(value = "/{id}", method = RequestMethod.GET)
 public ResponseEntity<Object> readUser(@PathVariable Long id){
 	UserResponse userResponse = userService.getUser(id);
@@ -50,3 +58,4 @@ public ResponseEntity<Object> readUser(@PathVariable Long id){
 	}
 
 }
+
