@@ -1,8 +1,12 @@
 package com.texas.practice.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.texas.practice.dto.UserDto;
 import com.texas.practice.model.User;
 import com.texas.practice.repository.UserRepository;
@@ -39,6 +43,21 @@ public class UserService {
 		userRepository.deleteById(userId);
 
 		
+	}
+	public Map<Object, Object> getallusers() {
+	
+		
+		List<User> user = userRepository.findAll();
+		List<UserResponse> userResponse = new ArrayList();
+		for(User u:user) {
+			UserResponse response = new UserResponse();
+			response.setName(u.getName());
+			response.setPassword((u.getPassword()));
+		    userResponse.add(response);
+		}
+		Map<Object, Object> responseMap = new HashMap<Object, Object>();
+		responseMap.put("All Users", userResponse);
+		return responseMap;
 	}
 	
 }

@@ -56,5 +56,12 @@ public ResponseEntity<Object> readUser(@PathVariable Long id){
 	    return new ResponseEntity<Object>("Deleted",HttpStatus.OK);
 	}
 
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<Object> getallusers(){
+		Map<Object, Object> responseMap = userService.getallusers();
+		return new ResponseEntity<Object>(responseMap, HttpStatus.OK);
+		
+	}
 }
 
